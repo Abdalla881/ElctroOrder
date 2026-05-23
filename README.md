@@ -1,6 +1,5 @@
 # 🍔 ElctrOrder — Full-Stack Food Ordering Platform
 
-> A modern, full-stack food ordering platform — built with **NestJS**, **MongoDB**, **React 19**, and **TanStack Start**. Users can browse a food menu, place orders, and track them in real time, while admins manage items, categories, and orders through a rich dashboard.
 
 ---
 
