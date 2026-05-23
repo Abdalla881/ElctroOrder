@@ -46,3 +46,27 @@ export function logout() {
   setToken(null);
   localStorage.removeItem(USER_KEY);
 }
+
+export async function forgetPassword(email: string): Promise<{ message: string }> {
+  return apiRequest<{ message: string }>("POST", "/auth/forget-password", { email });
+}
+
+export async function verifyResetCode(
+  email: string,
+  resetCode: string
+): Promise<{ message: string }> {
+  return apiRequest<{ message: string }>("POST", "/auth/verify-reset-code", {
+    email,
+    resetCode,
+  });
+}
+
+export async function resetPassword(
+  email: string,
+  newPassword: string
+): Promise<{ message: string }> {
+  return apiRequest<{ message: string }>("PUT", "/auth/reset-password", {
+    email,
+    newPassword,
+  });
+}

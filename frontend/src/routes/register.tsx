@@ -37,8 +37,8 @@ function RegisterPage() {
       emitAuthChange();
       toast.success(`Welcome ${res.user.name}`);
       navigate({ to: res.user.role === "admin" ? "/admin" : "/" });
-    } catch {
-      toast.error(t("common.error"));
+    } catch (err: any) {
+      toast.error(err?.message ?? t("common.error"));
     } finally {
       setLoading(false);
     }
