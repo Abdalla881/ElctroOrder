@@ -1,16 +1,17 @@
 # ⚡ ElctrOrder — Full-Stack Electronics Ordering Platform
 
-> [!WARNING]
-> This project is still under active development and is not fully completed yet due to the limited deadline time.
+> ⚠️ **IMPORTANT NOTICE**
 >
-> Current completed features include the core frontend, backend architecture, authentication, product management, and API integration.
+> This project is still under development and is not fully completed yet due to tight deadline constraints.
+>
+> The current version includes the main backend architecture, frontend implementation, and core authentication + API structure.
 >
 > The next planned steps are:
-> - Payment Gateway Integration
-> - Production Deployment on Vercel
-> - Final optimization & polishing
+> - Payment integration system
+> - Production deployment on Vercel
+> - Final polishing and optimization
 >
-> This repository is being shared for technical evaluation and portfolio purposes.
+> This repository is shared for technical evaluation and portfolio/demo purposes.
 
 > A modern, full-stack e-commerce platform for electronics ordering — built with **NestJS**, **MongoDB**, **React 19**, and **TanStack Start**.
 
