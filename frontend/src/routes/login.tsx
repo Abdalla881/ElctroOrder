@@ -32,8 +32,8 @@ function LoginPage() {
       emitAuthChange();
       toast.success(`Welcome ${res.user.name}`);
       navigate({ to: res.user.role === "admin" ? "/admin" : "/" });
-    } catch {
-      toast.error(t("common.error"));
+    } catch (err: any) {
+      toast.error(err?.message ?? t("common.error"));
     } finally {
       setLoading(false);
     }
@@ -53,6 +53,12 @@ function LoginPage() {
         <form onSubmit={submit} className="mt-8 space-y-4 rounded-2xl bg-card border border-border/60 p-6">
           <Field icon={Mail} placeholder={t("auth.email")} value={email} onChange={setEmail} error={errors.email} type="email" />
           <Field icon={Lock} placeholder={t("auth.password")} value={password} onChange={setPassword} error={errors.password} type="password" />
+
+          <div className="text-right">
+            <Link to="/forgot-password" className="text-xs text-primary hover:underline">
+              Forgot password?
+            </Link>
+          </div>
 
           <button
             type="submit"

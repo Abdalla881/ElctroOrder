@@ -19,7 +19,7 @@ export class AuthService {
     private userModel: Model<user>,
     private jwtService: JwtService,
     private EmailService: EmailService,
-  ) {}
+  ) { }
 
   async signup(userData: SignUpUserDto) {
     const isexistingUser = await this.userModel.exists({
@@ -91,7 +91,7 @@ export class AuthService {
     await user.save();
 
     // 3) Send the reset code to the user's email
-    const subject = 'Reset Your Password - Mafqood App';
+    const subject = 'Reset Your Password - ElctrOrder App';
     const text = `Hello ${user.name || 'User'},
 
 We received a request to reset your password.
@@ -100,7 +100,7 @@ Your reset code is: ${resetCode}
 If you did not request this, please ignore this email.
 
 Best regards,
-The Mafqood Team
+The ElctrOrder Team
 `;
 
     const html = `

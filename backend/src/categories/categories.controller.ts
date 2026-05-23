@@ -25,15 +25,11 @@ import { Roles } from 'src/common/decorators/roles.decorator';
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(['admin'])
   @Get()
   findAll() {
     return this.categoriesService.findAll();
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(['admin'])
   @Get(':id')
   findOne(@MongoIdParam() @Param('id') id: string) {
     return this.categoriesService.findOne(id);
