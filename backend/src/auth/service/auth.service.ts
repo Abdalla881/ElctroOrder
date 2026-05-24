@@ -28,7 +28,10 @@ export class AuthService {
     if (isexistingUser) {
       throw new ConflictException('Email already exists');
     }
-    const user = await this.userModel.create(userData);
+    const user = await this.userModel.create({
+      ...userData,
+      role: userData.role || 'user',
+    });
 
     const payload = {
       email: user.email,

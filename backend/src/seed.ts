@@ -14,6 +14,7 @@
 import * as mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
+import dns from 'dns';
 import { ItemSchema } from './items/schema/item.schema';
 import { CategorySchema } from './categories/schema/category.schema';
 
@@ -22,6 +23,7 @@ dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
 // ─── Connect ────────────────────────────────────────────────────────────────
 async function connect() {
+  dns.setServers(['1.1.1.1', '8.8.8.8']);
   const uri = process.env.DATABASE_URI;
   if (!uri) throw new Error('DATABASE_URI is not defined in .env');
   await mongoose.connect(uri);
